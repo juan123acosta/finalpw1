@@ -1,0 +1,734 @@
+@charset "UTF-8";
+
+a {
+  color: #e6a756;
+  text-decoration: underline;
+}
+a:hover {
+  color: #b88645;
+}
+
+/*Pagina de Inicio cuando se achica la imagen se adecua a la pantalla*/
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+.img-thumbnail {
+  padding: 0.25rem;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  max-width: 100%;
+  height: auto;
+}
+/*contenedor*/
+.container,
+.container-xl,
+.container-lg {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+/*contenedor de los cuadros*/
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+/*contenedor de los cuadros*/
+@media (min-width: 992px) {
+  .container-lg, .container {
+    max-width: 960px;
+  }
+}
+/*contenedor de los cuadros*/
+@media (min-width: 1200px) {
+  .container-xl, .container-lg, .container {
+    max-width: 1140px;
+  }
+}
+/*contenedor*/
+@media (min-width: 1400px) {
+  .container-xl, .container-lg, .container {
+    max-width: 1320px;
+  }
+}
+/*indica el ancho del elemento*/
+.col-9 {
+  flex: 0 0 auto;
+  width: 75%;
+}
+/*botones*/
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/*boton*/
+.btn:disabled, .btn.disabled, fieldset:disabled .btn {
+  pointer-events: none;
+  opacity: 0.65;
+}
+/*boton primary*/
+.btn-primary {
+  color: #000;
+  background-color: #e6a756;
+  border-color: #e6a756;
+}
+/*Se le da formato a la barra de navegacion*/
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+/*Le saca al Texto del enlace de Navegacion el "link"*/
+.nav-link {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #e6a756;
+  text-decoration: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+/*ordena la lista de menu*/
+.navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.navbar > .container,
+/*para un contenedor de ancho completo, que abarque todo el ancho de la ventana grafica*/
+.navbar > .container-fluid,
+/*100% de ancho hasta un gran punto de ruptura*/
+.navbar > .container-lg,
+/*100% de ancho hasta un punto de ruptura extra grande*/
+.navbar > .container-xl {
+  display: flex;
+  flex-wrap: inherit;
+  align-items: center;
+  justify-content: space-between;
+}
+/*Barra de Navegacion se adpata a la pantalla*/
+.navbar-brand {
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/*Le saca el punto a cada uno de la lista del menu*/
+.navbar-nav {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+/*Ordena la barra de navegacion para poder deslizar el menu*/
+.navbar-collapse {
+  flex-basis: 100%;
+  flex-grow: 1;
+  align-items: center;
+}
+/*Para que el iconon del menu aparezca cuando esta minimizado*/
+.navbar-toggler {
+  padding: 0.25rem 0.75rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  transition: box-shadow 0.15s ease-in-out;
+}
+/*Barra de Navegacion para que muestre el icono cuando esta minimizado*/
+.navbar-toggler:focus {
+  text-decoration: none;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem;
+}
+/*Barra de Navegacion para que cree el icono*/
+.navbar-toggler-icon {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+
+/*Indica la posicion del menu en la barra de navegacion*/
+@media (min-width: 992px) {
+  /*Barra de Navegacion Menu en fila*/
+  .navbar-expand-lg .navbar-nav {
+    flex-direction: row;
+  }
+  /*Para mantener el menu se extendido o sino se va a la izquierda*/
+  .navbar-expand-lg .navbar-collapse {
+    display: flex !important;
+    flex-basis: auto;
+  }
+  /*OCULTA EL icono de la barra de navegacion y muestra solo cuando esta minimizado*/
+  .navbar-expand-lg .navbar-toggler {
+    display: none;
+  }
+}
+
+.navbar-expand .offcanvas {
+  position: inherit;
+  bottom: 0;
+  z-index: 1000;
+  flex-grow: 1;
+  visibility: visible !important;
+  background-color: transparent;
+  border-right: 0;
+  border-left: 0;
+  transition: none;
+  transform: none;
+}
+
+@-webkit-keyframes progress-bar-stripes {
+  0% {
+    background-position-x: 1rem;
+  }
+}
+
+@keyframes progress-bar-stripes {
+  0% {
+    background-position-x: 1rem;
+  }
+}
+
+/*Para el carrusel*/
+.carousel {
+  position: relative;
+}
+.carousel.pointer-event {
+  touch-action: pan-y;
+}
+/*Para el carrusel interior*/
+.carousel-inner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+/*Para el emcabezado*/
+.carousel-inner::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+/*carrusel*/
+.carousel-item {
+  position: relative;
+  display: none;
+  float: left;
+  width: 100%;
+  margin-right: -100%;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  transition: transform 0.6s ease-in-out;
+}
+/*carrucel*/
+.carousel-item.active,
+.carousel-item-next,
+.carousel-item-prev {
+  display: block;
+}
+/* rtl:begin:ignore */
+.carousel-item-next:not(.carousel-item-start),
+.active.carousel-item-end {
+  transform: translateX(100%);
+}
+.carousel-item-prev:not(.carousel-item-end),
+.active.carousel-item-start {
+  transform: translateX(-100%);
+}
+/* rtl:end:ignore */
+.carousel-fade .carousel-item {
+  opacity: 0;
+  transition-property: opacity;
+  transform: none;
+}
+.carousel-fade .carousel-item.active,
+.carousel-fade .carousel-item-next.carousel-item-start,
+.carousel-fade .carousel-item-prev.carousel-item-end {
+  z-index: 1;
+  opacity: 1;
+}
+.carousel-fade .active.carousel-item-start,
+.carousel-fade .active.carousel-item-end {
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0s 0.6s;
+}
+/*carrusel control*/
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15%;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+  background: none;
+  border: 0;
+  opacity: 0.5;
+}
+
+/*carrusel control*/
+.carousel-control-prev:hover, .carousel-control-prev:focus,
+.carousel-control-next:hover,
+.carousel-control-next:focus {
+  color: #fff;
+  text-decoration: none;
+  outline: 0;
+  opacity: 0.9;
+}
+.carousel-control-prev {
+  left: 0;
+}
+/*carrusel next*/
+.carousel-control-next {
+  right: 0;
+}
+/*carrusel icon*/
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: 100% 100%;
+}
+/*carrusel icon*/
+.carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e");
+}
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+/*Para el carrusel*/
+.carousel-indicators {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin-right: 15%;
+  margin-bottom: 1rem;
+  margin-left: 15%;
+  list-style: none;
+}
+.carousel-indicators [data-bs-target] {
+  box-sizing: content-box;
+  flex: 0 1 auto;
+  width: 30px;
+  height: 3px;
+  padding: 0;
+  margin-right: 3px;
+  margin-left: 3px;
+  text-indent: -999px;
+  cursor: pointer;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  opacity: 0.5;
+  transition: opacity 0.6s ease;
+}
+/*Para el carrucel*/
+.carousel-indicators .active {
+  opacity: 1;
+}
+/*carrusel*/
+.carousel-caption {
+  position: absolute;
+  right: 15%;
+  bottom: 1.25rem;
+  left: 15%;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  color: #fff;
+  text-align: center;
+}
+.carousel-dark .carousel-control-prev-icon,
+.carousel-dark .carousel-control-next-icon {
+  filter: invert(1) grayscale(100);
+}
+.carousel-dark .carousel-indicators [data-bs-target] {
+  background-color: #000;
+}
+.carousel-dark .carousel-caption {
+  color: #000;
+}
+/*Pagina de Seccion para ordenar el documento*/
+.clearfix::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+/*Hace que los titulos sean adaptables*/
+.d-flex {
+  display: flex !important;
+}
+/*Para que pueda Centrarse*/
+.mx-auto {
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+/*Para el emcabezado*/
+.mb-3 {
+  margin-bottom: 1rem !important;
+}
+/*Indica que pueda mantenerse a la izquierda*/
+.ms-auto {
+  margin-left: auto !important;
+}
+/*Es el espacio que hay entre el div y el text*/
+.p-5 {
+  padding: 3rem !important;
+}
+.px-4 {
+  padding-right: 1.5rem !important;
+  padding-left: 1.5rem !important;
+}
+/*Para el grosor del pie de pagina*/
+.py-5 {
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
+}
+/*Para el emcabezado*/
+.text-center {
+  text-align: center !important;
+}
+/*Barra de Navegacion hace que el texto este en mayuscula*/
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+/*Para el emcabezado de abajo*/
+.text-primary {
+  --bs-text-opacity: 1;
+}
+/*Para que sea obladao el cuadro de imagen*/
+.rounded {
+  border-radius: 0.25rem !important;
+}
+@media (min-width: 992px) {
+  /**/
+  .d-lg-inline-block {
+    display: inline-block !important;
+  }
+  .d-lg-block {
+    display: block !important;
+  }
+  /*Barra de Navegacion oculta un texto en la pnatalla completa*/
+  .d-lg-none {
+    display: none !important;
+  }
+  .flex-lg-fill {
+    flex: 1 1 auto !important;
+  }
+  .flex-lg-row {
+    flex-direction: row !important;
+  }
+  .flex-lg-column {
+    flex-direction: column !important;
+  }
+  .flex-lg-row-reverse {
+    flex-direction: row-reverse !important;
+  }
+  .flex-lg-column-reverse {
+    flex-direction: column-reverse !important;
+  }
+  .flex-lg-grow-0 {
+    flex-grow: 0 !important;
+  }
+  .flex-lg-grow-1 {
+    flex-grow: 1 !important;
+  }
+  .flex-lg-shrink-0 {
+    flex-shrink: 0 !important;
+  }
+  .flex-lg-shrink-1 {
+    flex-shrink: 1 !important;
+  }
+  .flex-lg-wrap {
+    flex-wrap: wrap !important;
+  }
+  .flex-lg-nowrap {
+    flex-wrap: nowrap !important;
+  }
+  .flex-lg-wrap-reverse {
+    flex-wrap: wrap-reverse !important;
+  }
+  .m-lg-0 {
+    margin: 0 !important;
+  }
+  .m-lg-auto {
+    margin: auto !important;
+  }
+  .mx-lg-auto {
+    margin-right: auto !important;
+    margin-left: auto !important;
+  }
+  .me-lg-auto {
+    margin-right: auto !important;
+  }
+  .mb-lg-0 {
+    margin-bottom: 0 !important;
+  }
+  .mb-lg-3 {
+    margin-bottom: 1rem !important;
+  }
+  .ms-lg-auto {
+    margin-left: auto !important;
+  }
+/*Seracion de las listas*/
+  .px-lg-4 {
+    padding-right: 1.5rem !important;
+    padding-left: 1.5rem !important;
+  }
+/*Barra de navegacion grosor*/
+  .py-lg-4 {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+  .text-lg-start {
+    text-align: left !important;
+  }
+
+  .text-lg-end {
+    text-align: right !important;
+  }
+
+  .text-lg-center {
+    text-align: center !important;
+  }
+}
+/*Fondo de la cabecera*/
+body {
+  background-image: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url("../assets/img/bg.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+/*hace que los parrafos se separen mas*/
+p {
+  line-height: 1.75;
+}
+/*Hace que el titulo del emcabezado sea descolorido*/
+.text-faded {
+  color: #f6e1c5;
+}
+/*EMBABEZADO*/
+.site-heading {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  text-transform: uppercase;
+  line-height: 1;
+  font-family: "Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+/*Hace que el segundo titulo se baje abajo y no aparezca al lado*/
+.site-heading .site-heading-upper {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+}
+/*Para el emcabezado de abajo cambia su letra*/
+.site-heading .site-heading-lower {
+  font-size: 5rem;
+  font-weight: 100;
+  line-height: 4rem;
+}
+/*Pagina de Seccion*/
+.page-section {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+/*Pone en mayuscula toda la letra del cuadro de texto*/
+.section-heading {
+  /*Upepercase:Es una palabra clave que fuerza a que la primera letra de cada palabra sea convertida a mayúscula*/
+  text-transform: uppercase;
+}
+/*Seccion de Cabecera: Le da formato al titulo del cuadro*/
+.section-heading .section-heading-upper {
+  display: block;
+  font-size: 1rem;
+  font-weight: 800;
+}
+/*Seccion de Cabecera: Le da formato al titulo lower*/
+.section-heading .section-heading-lower {
+  display: block;
+  font-size: 3rem;
+  font-weight: 100;
+}
+/*Le pone al div un color de fondo*/
+.bg-faded {
+  background-color: #f6e1c5;
+}
+/*Para el boton sea mucho mas grande*/
+.btn-xl {
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+/*Barra de Navegacion Estilo al id*/
+#mainNav {
+  background-color: rgba(47, 23, 15, 0.9);
+  font-family: "Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+/*Hace que Texto del enlace de Navegacion tenga relleno*/
+#mainNav .navbar-nav .nav-item .nav-link {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 800;
+}
+
+@media (min-width: 992px) {
+  /*Para que dentro de la imagen pueda entrar un chiqui el cuadro de texto*/
+  .about-heading .about-heading-content {
+    margin-top: -5rem;
+    position: relative;
+    z-index: 1;
+  }
+}
+/*el cuadro que esta atras del cuadro de horario*/
+.cta {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-color: rgba(230, 167, 86, 0.9);
+}
+/*la posicion del borde del cuadro*/
+.cta .cta-inner {
+  position: relative;
+  padding: 3rem;
+  margin: 0.5rem;
+}
+/*El borde del cuadro del horario*/
+.cta .cta-inner:before {
+  border-radius: 0.5rem;
+  content: "";
+  position: absolute;
+  top: -0.5rem;
+  bottom: -0.5rem;
+  left: -0.5rem;
+  right: -0.5rem;
+  border: 0.25rem solid rgba(255, 255, 255, 0.85);
+  z-index: -1;
+}
+/*sombreado del copyright*/
+.footer {
+  background-color: rgba(47, 23, 15, 0.9);
+}
+/*Hace que los cuadros esten acomodados*/
+.intro {
+  position: relative;
+}
+@media (min-width: 992px) {
+  /*Pagina de Inicio la Primera Seccion el tamño de la imagen*/
+  .intro .intro-img {
+    width: 75%;
+    float: right;
+  }
+/*Da formato al div de Pagina de Inicio la Primera Seccion */
+  .intro .intro-text {
+    left: 0;
+    width: 60%;
+    margin-top: 3rem;
+    position: absolute;
+  }
+  /*Hace que el texto junto con el boton entren un poquito en la imagen*/
+  .intro .intro-text .intro-button {
+    width: 100%;
+    left: 0;
+    position: absolute;
+    bottom: -2rem;
+  }
+}
+/*Define el ancho de div de la Pagina de Inicio/Primera Seccion */
+@media (min-width: 1200px) {
+  .intro .intro-text {
+    width: 45%;
+  }
+}
+/*Acomoda la imagen encima de la imagen*/
+@media (min-width: 992px) {
+  .product-item .product-item-title {
+    position: relative;
+    z-index: 1;
+    margin-bottom: -3rem;
+  }
+  /*El formato de las imagenes para que tengan todos el mismo tamaño*/
+  .product-item .product-item-img {
+    position: relative;
+    z-index: 0;
+    max-width: 60vw;
+  }
+  /*El formato de la descripcion de los helados*/
+  .product-item .product-item-description {
+    position: relative;
+    z-index: 1;
+    margin-top: -3rem;
+    max-width: 50vw;
+  }
+}
+/*Le da formato al Horario*/
+.list-hours {
+  font-size: 0.9rem;
+}
+/*Le da formato al Horario*/
+.list-hours .list-hours-item {
+  border-bottom: 1px solid rgba(230, 167, 86, 0.5);
+  padding-bottom: 0.25rem;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+/*Hace que el horario marque el dia actual*/
+.list-hours .list-hours-item.today {
+  font-weight: bold;
+  color: #e6a756;
+}
+@media (min-width: 992px) {
+  /*Le da formato al horario*/
+  .list-hours {
+    width: 50%;
+    font-size: 1.1rem; /*para hacer que la letra sea mas grande*/
+  }
+}
